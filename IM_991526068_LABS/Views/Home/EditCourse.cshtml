@@ -1,0 +1,35 @@
+﻿@model HI_LAB1.Models.Course
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+    <title>Course Form</title>
+</head>
+<body>
+    <h1>Course Form</h1>
+
+    <form asp-action="EditCourse" method="post">
+        <input asp-for="CourseCode" value="@ViewBag.Course.CourseCode" readonly />
+        <p>
+            <label asp-for="SList">
+                Select Student to drop
+                <select asp-for="StudentNumber">
+                    @foreach (HI_LAB1.Models.Student s in ViewBag.Course.SList)
+                    {
+                        <option value="@s.StudentNumber">@s.FirstName @s.LastName</option>
+                    }
+                </select>
+            </label>
+        </p>
+
+        <button type="submit">Drop Student</button>
+    </form>
+    <a href="../Home/Index">Home Page</a>
+</body>
+</html>

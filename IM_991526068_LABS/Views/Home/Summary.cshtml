@@ -1,0 +1,51 @@
+﻿@model HI_LAB1.Models.CourseList
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+    <title>Summary of Registration</title>
+</head>
+<body>
+    <h2>Currently Registered Student</h2>
+    <table class="table table-sm table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Course Code</th>
+                <th>Course Name</th>
+                <th>Number of Credit</th>
+                <th>Students</th>
+            </tr>
+        </thead>
+        <tbody>
+
+
+            @foreach (HI_LAB1.Models.Course c in HI_LAB1.Models.CourseList.Courses)
+            {
+                <tr>
+                    <td><a href="../Home/EditCourse/@c.CourseCode">@c.CourseCode</a></td>
+                    <td>@c.CourseName</td>
+                    <td>@c.Credit</td>
+                    <td>
+                        <ul>
+                            @foreach (HI_LAB1.Models.Student s in c.SList)
+                            {
+                                <li>@s.FirstName @s.LastName</li>
+                            }
+                        </ul>
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+
+    <a href="../Home/Index">Home Page</a>
+</body>
+</html>

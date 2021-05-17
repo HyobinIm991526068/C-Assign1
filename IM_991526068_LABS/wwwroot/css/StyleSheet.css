@@ -1,0 +1,37 @@
+﻿body {
+    background-color:aqua;
+    text-align: center;
+}
+
+header{
+    background-color:yellow;
+}
+
+footer{
+    background-color:yellow;
+}
+
+h1{
+    color: purple;
+}
+
+h3{
+    color:blueviolet;
+}
+
+td{
+    color:fuchsia;
+}
+
+a{
+    border: solid black;
+    padding-top:3px;
+    padding-bottom:3px;
+    padding-right:5px;
+    padding-left:5px;
+}
+
+th{
+    padding-left: 20px;
+    padding-right: 20px;
+}

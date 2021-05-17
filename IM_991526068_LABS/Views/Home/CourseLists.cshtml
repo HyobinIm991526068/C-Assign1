@@ -1,0 +1,38 @@
+﻿@model IEnumerable<HI_LAB1.Models.Course>
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTTYPE html>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="~/css/StyleSheet.css" />
+        <title>Course List</title>
+    </head>
+    <body>
+        <h3>Here is the list of courses</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Course Code</th>
+                    <th>Course Name</th>
+                    <th>Number Of Credits</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (HI_LAB1.Models.Course c in Model)
+                {
+                    <tr>
+                        <td>@c.CourseCode</td>
+                        <td>@c.CourseName</td>
+                        <td>@c.Credit</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </body>
+    <a href="../Home/Index">Home Page</a>
+</html>
+</!DOCTTYPE>

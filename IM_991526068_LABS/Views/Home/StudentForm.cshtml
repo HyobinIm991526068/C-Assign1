@@ -1,0 +1,51 @@
+﻿@model HI_LAB1.Models.Student
+
+@{ 
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+    <title>Student Form</title>
+</head>
+<body>
+    <h1>Student Form</h1>
+
+    <form asp-action="StudentForm" method="post">
+        <div asp-validation-summary="All"></div>
+        <p>
+            <label asp-for="FirstName">
+                First Name:
+                <input asp-for="FirstName" />
+            </label>
+        </p>
+        <p>
+            <label asp-for="LastName">
+                Last Name:
+                <input asp-for="LastName" />
+            </label>
+        </p>
+        <p>
+            <label asp-for="StudentNumber">
+                Student Number:
+                <input asp-for="StudentNumber" />
+            </label>
+        </p>
+        <p>
+            <label asp-for="SelectedCourse">Enter Your Selected Course</label>
+            <select asp-for="SelectedCourse">
+                @foreach (HI_LAB1.Models.Course c in ViewBag.Courses)
+                {
+                    <option value="@c.CourseName">@c.CourseName</option>
+                }
+            </select>
+        </p>
+
+        <button type="submit">Add Student</button>
+    </form>
+    <a href="../Home/Index">Home Page</a>
+</body>
+</html>

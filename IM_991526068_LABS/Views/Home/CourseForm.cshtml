@@ -1,0 +1,43 @@
+﻿@model HI_LAB1.Models.Course
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+    <title>Course Form</title>
+</head>
+<body>
+    <h1>Course Form</h1>
+
+    <form asp-action="CourseForm" method="post">
+        <div asp-validation-summary="All"></div>
+        <p>
+            <label asp-for="CourseCode">
+                Course Code:
+                <input asp-for="CourseCode" />
+            </label>
+        </p>
+        <p>
+            <label asp-for="CourseName">
+                Course Name:
+                <input asp-for="CourseName" />
+            </label>
+        </p>
+        <p>
+            <label asp-for="Credit">
+                Number of Credits:
+                <input asp-for="Credit" />
+            </label>
+        </p>
+
+        <button type="submit">Add Course</button>
+    </form>
+
+    <a href="../Home/Index">Home Page</a>
+</body>
+</html>
